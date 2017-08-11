@@ -7,7 +7,12 @@
 
 @property (nonatomic, readonly, copy, nullable) NSString *title;
 @property (nonatomic, readonly, copy, nullable) NSString *subtitle;
+@property (nonatomic, readonly, copy, nullable) NSString *info;
 
-- (instancetype _Nullable )initWithCoordinates:(CLLocationCoordinate2D)paramCoordinates title:(NSString *_Nullable)paramTitle subtitle:(NSString *_Nullable)paramSubtitle;
+@property (nonatomic, unsafe_unretained) MKPinAnnotationColor pinColor;
+
++ (NSString *_Nullable)reusableIdentifierForPinColor:(MKPinAnnotationColor)paramColor;
+
+- (instancetype _Nullable )initWithCoordinates:(CLLocationCoordinate2D)paramCoordinates title:(NSString *_Nullable)paramTitle subtitle:(NSString *_Nullable)paramSubtitle info:(NSString *_Nullable)info;
 
 @end
