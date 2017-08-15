@@ -2,26 +2,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "VAKMyAnnotation.h"
-
-@interface UIView (MKAnnotationView)
-
-- (MKAnnotationView *)superAnnotationView;
-
-@end
-
-@implementation UIView (MKAnnotationView)
-
-- (MKAnnotationView *)superAnnotationView {
-    if ([self.superview isKindOfClass:[MKAnnotationView class]]) {
-        return (MKAnnotationView *)self;
-    }
-    else if (!self.superview) {
-        return nil;
-    }
-    return [self.superview superAnnotationView];
-}
-
-@end
+#import "VAKPlace.h"
 
 @interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -49,10 +30,8 @@
     [super viewDidLoad];
     self.mapView.delegate = self;
     [self loadData];
-    if (_annotations) {
-        [self.mapView addAnnotations:self.annotations];
-        [self zoomRegionAnnotations];
-    }
+    [self.mapView addAnnotations:self.annotations];
+    [self zoomRegionAnnotations];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -79,7 +58,6 @@
     if (!annotationView) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:senderAnnotation reuseIdentifier:pinReusableIdentifier];
         UIButton *descriptionButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        [descriptionButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
         annotationView.rightCalloutAccessoryView = descriptionButton;
         [annotationView setCanShowCallout:YES];
     }
@@ -112,13 +90,9 @@
 }
 
 - (void)addAnnotationFromJSON:(NSArray *)json {
-    NSString *title = [NSString stringWithFormat:@"%@", json[16]];
-    NSString *subtitle = [NSString stringWithFormat:@"%@", json[12]];
-    NSString *latitude = [NSString stringWithFormat:@"%@", json[18]];
-    NSString *longitude = [NSString stringWithFormat:@"%@", json[19]];
-    NSString *info = [NSString stringWithFormat:@"%@", json[11]];
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude.doubleValue, longitude.doubleValue);
-    VAKMyAnnotation *annotation = [[VAKMyAnnotation alloc] initWithCoordinates:coordinate title:title subtitle:subtitle info:info];
+    VAKPlace *place = [VAKPlace initFromJSON:json];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(place.latitude.doubleValue, place.longitude.doubleValue);
+    VAKMyAnnotation *annotation = [[VAKMyAnnotation alloc] initWithCoordinates:coordinate title:place.title subtitle:place.subtitle info:place.info];
     [self.annotations addObject:annotation];
 }
 

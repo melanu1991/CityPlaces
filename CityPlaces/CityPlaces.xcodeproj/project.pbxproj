@@ -17,6 +17,7 @@
 		5803200C1F3DA0BC00DAF05A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5803200B1F3DA0BC00DAF05A /* CoreLocation.framework */; };
 		5803200F1F3DAB6500DAF05A /* VAKMyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5803200E1F3DAB6500DAF05A /* VAKMyAnnotation.m */; };
 		580320111F3DBA3C00DAF05A /* PublicArt.json in Resources */ = {isa = PBXBuildFile; fileRef = 580320101F3DBA3C00DAF05A /* PublicArt.json */; };
+		584CA5CF1F435BCB001AB0B4 /* VAKPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CA5CE1F435BCB001AB0B4 /* VAKPlace.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		5803200D1F3DAB6500DAF05A /* VAKMyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAKMyAnnotation.h; sourceTree = "<group>"; };
 		5803200E1F3DAB6500DAF05A /* VAKMyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VAKMyAnnotation.m; sourceTree = "<group>"; };
 		580320101F3DBA3C00DAF05A /* PublicArt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PublicArt.json; sourceTree = "<group>"; };
+		584CA5CD1F435BCB001AB0B4 /* VAKPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAKPlace.h; sourceTree = "<group>"; };
+		584CA5CE1F435BCB001AB0B4 /* VAKPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VAKPlace.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				58031FF11F3D956200DAF05A /* Supporting Files */,
 				5803200D1F3DAB6500DAF05A /* VAKMyAnnotation.h */,
 				5803200E1F3DAB6500DAF05A /* VAKMyAnnotation.m */,
+				584CA5CD1F435BCB001AB0B4 /* VAKPlace.h */,
+				584CA5CE1F435BCB001AB0B4 /* VAKPlace.m */,
 			);
 			path = CityPlaces;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				58031FF91F3D956200DAF05A /* ViewController.m in Sources */,
 				58031FF61F3D956200DAF05A /* AppDelegate.m in Sources */,
 				58031FF31F3D956200DAF05A /* main.m in Sources */,
+				584CA5CF1F435BCB001AB0B4 /* VAKPlace.m in Sources */,
 				5803200F1F3DAB6500DAF05A /* VAKMyAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +349,7 @@
 				580320071F3D956200DAF05A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
