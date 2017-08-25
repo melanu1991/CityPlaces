@@ -2,13 +2,13 @@
 
 @implementation VAKPlace
 
-+ (VAKPlace *)initFromJSON:(NSArray *)json {
++ (VAKPlace *)initPlaceFromData:(NSArray *)data {
     VAKPlace *place = [[super alloc] init];
-    place.title = [NSString stringWithFormat:@"%@", json[16]];
-    place.subtitle = [NSString stringWithFormat:@"%@", json[12]];
-    place.latitude = [NSString stringWithFormat:@"%@", json[18]];
-    place.longitude = [NSString stringWithFormat:@"%@", json[19]];
-    place.info = [NSString stringWithFormat:@"%@", json[11]];
+    place.title = [NSString stringWithFormat:@"%@", data[16]];
+    place.subtitle = [NSString stringWithFormat:@"%@", data[12]];
+    place.latitude = [NSString stringWithFormat:@"%@", data[18]];
+    place.longitude = [NSString stringWithFormat:@"%@", data[19]];
+    place.info = [NSString stringWithFormat:@"%@", data[11]];
     return place;
 }
 

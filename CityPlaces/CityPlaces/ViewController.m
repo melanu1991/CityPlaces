@@ -90,7 +90,7 @@
 }
 
 - (void)addAnnotationFromJSON:(NSArray *)json {
-    VAKPlace *place = [VAKPlace initFromJSON:json];
+    VAKPlace *place = [VAKPlace initPlaceFromData:json];
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(place.latitude.doubleValue, place.longitude.doubleValue);
     VAKMyAnnotation *annotation = [[VAKMyAnnotation alloc] initWithCoordinates:coordinate title:place.title subtitle:place.subtitle info:place.info];
     [self.annotations addObject:annotation];
