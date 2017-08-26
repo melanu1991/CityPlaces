@@ -8,6 +8,6 @@
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *longitude;
 
-+ (VAKPlace *)initPlaceFromData:(NSArray *)json;
++ (VAKPlace *)initPlaceWithData:(NSArray *)data;
 
 @end

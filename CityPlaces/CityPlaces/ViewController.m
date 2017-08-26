@@ -89,8 +89,8 @@
     [self.mapView setVisibleMapRect:zoomRect edgePadding:UIEdgeInsetsMake(100, 100, 100, 100) animated:YES];
 }
 
-- (void)addAnnotationFromJSON:(NSArray *)json {
-    VAKPlace *place = [VAKPlace initPlaceFromData:json];
+- (void)addAnnotationWithData:(NSArray *)data {
+    VAKPlace *place = [VAKPlace initPlaceWithData:data];
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(place.latitude.doubleValue, place.longitude.doubleValue);
     VAKMyAnnotation *annotation = [[VAKMyAnnotation alloc] initWithCoordinates:coordinate title:place.title subtitle:place.subtitle info:place.info];
     [self.annotations addObject:annotation];
@@ -105,7 +105,7 @@
         if (!error) {
             NSArray *arrayObjects = [json objectForKey:@"data"];
             for (NSArray *object in arrayObjects) {
-                [self addAnnotationFromJSON:object];
+                [self addAnnotationWithData:object];
             }
         }
     }
