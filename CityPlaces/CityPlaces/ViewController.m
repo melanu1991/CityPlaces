@@ -90,7 +90,7 @@
 }
 
 - (void)addAnnotationWithData:(NSArray *)data {
-    VAKPlace *place = [VAKPlace initPlaceWithData:data];
+    VAKPlace *place = [VAKPlace placeWithData:data];
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(place.latitude.doubleValue, place.longitude.doubleValue);
     VAKMyAnnotation *annotation = [[VAKMyAnnotation alloc] initWithCoordinates:coordinate title:place.title subtitle:place.subtitle info:place.info];
     [self.annotations addObject:annotation];

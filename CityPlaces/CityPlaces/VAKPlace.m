@@ -2,7 +2,7 @@
 
 @implementation VAKPlace
 
-+ (VAKPlace *)initPlaceWithData:(NSArray *)data {
++ (VAKPlace *)placeWithData:(NSArray *)data {
     VAKPlace *place = [[super alloc] init];
     place.title = [NSString stringWithFormat:@"%@", data[16]];
     place.subtitle = [NSString stringWithFormat:@"%@", data[12]];
